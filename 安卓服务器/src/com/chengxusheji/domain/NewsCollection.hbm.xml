@@ -1,0 +1,46 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.chengxusheji.domain">
+
+	<class name="NewsCollection" table="NewsCollection">
+
+          <!-- 主键收藏id -->
+          <id name="collectionId" column="collectionId">
+            <generator class="native"/>
+          </id>
+
+          <!-- 多对一属性: 被收藏新闻 -->
+          <many-to-one name="newsObj"
+            column="newsObj"
+            class="News"
+            lazy="false"
+            outer-join="true"
+            cascade="save-update"
+          />
+
+          <!-- 多对一属性: 收藏人 -->
+          <many-to-one name="userObj"
+            column="userObj"
+            class="UserInfo"
+            lazy="false"
+            outer-join="true"
+            cascade="save-update"
+          />
+
+          <!-- 简单字符串属性: 收藏时间 -->
+          <property
+            name="collectTime"
+            column="collectTime"
+            type="string"
+            length="30"
+          />
+
+
+		 
+		
+	</class>
+	
+</hibernate-mapping>
+ 

@@ -1,0 +1,53 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.chengxusheji.domain">
+
+	<class name="PhotoShare" table="PhotoShare">
+
+          <!-- 主键分享id -->
+          <id name="sharePhotoId" column="sharePhotoId">
+            <generator class="native"/>
+          </id>
+
+          <!-- 简单字符串属性: 图片标题 -->
+          <property
+            name="photoTitle"
+            column="photoTitle"
+            type="string"
+            length="20"
+          />
+
+          <!-- 简单图片属性: 图片 -->
+          <property
+            name="sharePhoto"
+            column="sharePhoto"
+            type="string"
+            length="50"
+          />
+
+          <!-- 多对一属性: 上传用户 -->
+          <many-to-one name="userInfoObj"
+            column="userInfoObj"
+            class="UserInfo"
+            lazy="false"
+            outer-join="true"
+            cascade="save-update"
+          />
+
+          <!-- 简单字符串属性: 分享时间 -->
+          <property
+            name="shareTime"
+            column="shareTime"
+            type="string"
+            length="20"
+          />
+
+
+		 
+		
+	</class>
+	
+</hibernate-mapping>
+ 

@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app version="2.5" 
+	xmlns="http://java.sun.com/xml/ns/javaee" 
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee 
+	http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd">
+	
+	
+	
+	<!-- 指定spring的配置文件，默认从web根目录寻找配置文件，我们可以通过spring提供的classpath:前缀指定从类路径下寻找 -->
+	<context-param>
+	   <param-name>contextConfigLocation</param-name>
+	   <param-value>classpath:beans.xml</param-value>
+	</context-param>
+	
+	
+	<!-- 对Spring容器进行实例化 -->
+	<listener>
+	      <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
+	</listener>
+	
+	
+	<!-- struts启用配置 -->
+	<filter>
+	      <filter-name>struts2</filter-name> 
+        <filter-class>org.apache.struts2.dispatcher.ng.filter.StrutsPrepareAndExecuteFilter</filter-class>
+	</filter>
+
+    <filter-mapping>
+        <filter-name>struts2</filter-name>
+        <url-pattern>*.action</url-pattern>
+    </filter-mapping>
+    
+    
+    <!-- 登录验证servlet配置 -->
+    <servlet>
+        <servlet-name>LoginServlet</servlet-name>
+        <servlet-class>com.mobileserver.servlet.LoginServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>LoginServlet</servlet-name>
+        <url-pattern>/LoginServlet</url-pattern>
+    </servlet-mapping>
+      
+    <!-- 用户注册servlet配置 -->
+    <servlet>
+        <servlet-name>RegisterServlet</servlet-name>
+        <servlet-class>com.mobileserver.servlet.RegisterServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>RegisterServlet</servlet-name>
+        <url-pattern>/RegisterServlet</url-pattern>
+    </servlet-mapping>
+    
+    <!-- 上传图片servlet配置 -->
+    <servlet>
+        <servlet-name>UpPhotoServlet</servlet-name>
+        <servlet-class>com.mobileserver.servlet.UpPhotoServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>UpPhotoServlet</servlet-name>
+        <url-pattern>/UpPhotoServlet</url-pattern>
+    </servlet-mapping> 
+    
+    <!-- 新闻分类管理servlet配置 -->
+    <servlet>
+        <servlet-name>NewsClassServlet</servlet-name>
+        <servlet-class>com.mobileserver.servlet.NewsClassServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>NewsClassServlet</servlet-name>
+        <url-pattern>/NewsClassServlet</url-pattern>
+    </servlet-mapping>
+
+    <!-- 新闻信息管理servlet配置 -->
+    <servlet>
+        <servlet-name>NewsServlet</servlet-name>
+        <servlet-class>com.mobileserver.servlet.NewsServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>NewsServlet</servlet-name>
+        <url-pattern>/NewsServlet</url-pattern>
+    </servlet-mapping>
+
+    <!-- 用户信息管理servlet配置 -->
+    <servlet>
+        <servlet-name>UserInfoServlet</servlet-name>
+        <servlet-class>com.mobileserver.servlet.UserInfoServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>UserInfoServlet</servlet-name>
+        <url-pattern>/UserInfoServlet</url-pattern>
+    </servlet-mapping>
+
+    <!-- 新闻标记管理servlet配置 -->
+    <servlet>
+        <servlet-name>NewsTagServlet</servlet-name>
+        <servlet-class>com.mobileserver.servlet.NewsTagServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>NewsTagServlet</servlet-name>
+        <url-pattern>/NewsTagServlet</url-pattern>
+    </servlet-mapping>
+
+    <!-- 新闻评论管理servlet配置 -->
+    <servlet>
+        <servlet-name>NewsCommentServlet</servlet-name>
+        <servlet-class>com.mobileserver.servlet.NewsCommentServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>NewsCommentServlet</servlet-name>
+        <url-pattern>/NewsCommentServlet</url-pattern>
+    </servlet-mapping>
+
+    <!-- 新闻收藏管理servlet配置 -->
+    <servlet>
+        <servlet-name>NewsCollectionServlet</servlet-name>
+        <servlet-class>com.mobileserver.servlet.NewsCollectionServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>NewsCollectionServlet</servlet-name>
+        <url-pattern>/NewsCollectionServlet</url-pattern>
+    </servlet-mapping>
+
+    <!-- 新闻赞管理servlet配置 -->
+    <servlet>
+        <servlet-name>ZambiaServlet</servlet-name>
+        <servlet-class>com.mobileserver.servlet.ZambiaServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ZambiaServlet</servlet-name>
+        <url-pattern>/ZambiaServlet</url-pattern>
+    </servlet-mapping>
+
+    <!-- 图片分享管理servlet配置 -->
+    <servlet>
+        <servlet-name>PhotoShareServlet</servlet-name>
+        <servlet-class>com.mobileserver.servlet.PhotoShareServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>PhotoShareServlet</servlet-name>
+        <url-pattern>/PhotoShareServlet</url-pattern>
+    </servlet-mapping>
+
+    <!-- 图片评论管理servlet配置 -->
+    <servlet>
+        <servlet-name>PhotoCommentServlet</servlet-name>
+        <servlet-class>com.mobileserver.servlet.PhotoCommentServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>PhotoCommentServlet</servlet-name>
+        <url-pattern>/PhotoCommentServlet</url-pattern>
+    </servlet-mapping>
+
+    <!-- 视频分享管理servlet配置 -->
+    <servlet>
+        <servlet-name>VideoShareServlet</servlet-name>
+        <servlet-class>com.mobileserver.servlet.VideoShareServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>VideoShareServlet</servlet-name>
+        <url-pattern>/VideoShareServlet</url-pattern>
+    </servlet-mapping>
+
+    <!-- 活动信息管理servlet配置 -->
+    <servlet>
+        <servlet-name>HuodongServlet</servlet-name>
+        <servlet-class>com.mobileserver.servlet.HuodongServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>HuodongServlet</servlet-name>
+        <url-pattern>/HuodongServlet</url-pattern>
+    </servlet-mapping>
+
+ 
+  <welcome-file-list>
+    <welcome-file>index.jsp</welcome-file>
+  </welcome-file-list>
+</web-app>

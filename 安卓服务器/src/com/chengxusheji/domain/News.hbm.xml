@@ -1,0 +1,77 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.chengxusheji.domain">
+
+	<class name="News" table="News">
+
+          <!-- 主键新闻id -->
+          <id name="newsId" column="newsId">
+            <generator class="native"/>
+          </id>
+
+          <!-- 多对一属性: 新闻类别 -->
+          <many-to-one name="newsClassObj"
+            column="newsClassObj"
+            class="NewsClass"
+            lazy="false"
+            outer-join="true"
+            cascade="save-update"
+          />
+
+          <!-- 简单字符串属性: 新闻标题 -->
+          <property
+            name="newsTitle"
+            column="newsTitle"
+            type="string"
+            length="50"
+          />
+
+          <!-- 简单图片属性: 新闻图片 -->
+          <property
+            name="newsPhoto"
+            column="newsPhoto"
+            type="string"
+            length="50"
+          />
+
+          <!-- 简单字符串属性: 新闻内容 -->
+          <property
+            name="content"
+            column="content"
+            type="string"
+            length="5000"
+          />
+
+          <!-- 简单字符串属性: 新闻来源 -->
+          <property
+            name="comFrom"
+            column="comFrom"
+            type="string"
+            length="20"
+          />
+
+          <!-- 简单整型属性: 浏览次数 -->
+          <property
+            name="hitNum"
+            column="hitNum"
+            type="int"
+
+          />
+
+          <!-- 简单字符串属性: 添加时间 -->
+          <property
+            name="addTime"
+            column="addTime"
+            type="string"
+            length="20"
+          />
+
+
+		 
+		
+	</class>
+	
+</hibernate-mapping>
+ 
