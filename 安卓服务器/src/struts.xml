@@ -1,0 +1,218 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+     <constant name="struts.i18n.encoding" value="gbk"/>
+     <constant name="struts.devMode" value="true" />
+     <!--Struts2中Action对象的创建交给spring完成-->
+     <constant name="struts.objectFactory" value="spring" />   
+       
+          
+	 <package name="login" namespace="/login" extends="struts-default">
+	        <action name="login_*" class="loginAction" method="{1}">
+	        	<result name="main_view">/main.jsp</result>
+	        	<result name="error">/error.jsp</result>
+	        	<result name="input">/login.jsp</result> 
+	        	<result name="login_view">/login.jsp</result>
+	          
+	        </action>  
+	 </package>
+	 
+         <!-- NewsClassAction配置 -->
+         <package name="NewsClass" namespace="/NewsClass" extends="struts-default">
+           <action name="NewsClass_*" class="newsClassAction" method="{1}">
+             <result name="add_view">/NewsClass_add.jsp</result>
+             <result name="input">/NewsClass_add.jsp</result>
+             <result name="add_success">/message.jsp</result>
+             <result name="delete_success">/message.jsp</result>
+             <result name="modify_success">/message.jsp</result>
+             <result name="error">/error.jsp</result>
+             <result name="query_view">/NewsClass_query_result.jsp</result>
+             <result name="front_query_view">/NewsClass_frontquery_result.jsp</result>
+             <result name="front_show_view">/NewsClass_frontshow.jsp</result>
+             <result name="modify_view">/NewsClass_modify.jsp</result>
+           </action>
+         </package>
+
+         <!-- NewsAction配置 -->
+         <package name="News" namespace="/News" extends="struts-default">
+           <action name="News_*" class="newsAction" method="{1}">
+             <result name="add_view">/News_add.jsp</result>
+             <result name="input">/News_add.jsp</result>
+             <result name="add_success">/message.jsp</result>
+             <result name="delete_success">/message.jsp</result>
+             <result name="modify_success">/message.jsp</result>
+             <result name="error">/error.jsp</result>
+             <result name="query_view">/News_query_result.jsp</result>
+             <result name="front_query_view">/News_frontquery_result.jsp</result>
+             <result name="front_show_view">/News_frontshow.jsp</result>
+             <result name="modify_view">/News_modify.jsp</result>
+           </action>
+         </package>
+
+         <!-- UserInfoAction配置 -->
+         <package name="UserInfo" namespace="/UserInfo" extends="struts-default">
+           <action name="UserInfo_*" class="userInfoAction" method="{1}">
+             <result name="add_view">/UserInfo_add.jsp</result>
+             <result name="input">/UserInfo_add.jsp</result>
+             <result name="add_success">/message.jsp</result>
+             <result name="delete_success">/message.jsp</result>
+             <result name="modify_success">/message.jsp</result>
+             <result name="error">/error.jsp</result>
+             <result name="query_view">/UserInfo_query_result.jsp</result>
+             <result name="front_query_view">/UserInfo_frontquery_result.jsp</result>
+             <result name="front_show_view">/UserInfo_frontshow.jsp</result>
+             <result name="modify_view">/UserInfo_modify.jsp</result>
+           </action>
+         </package>
+
+         <!-- NewsTagAction配置 -->
+         <package name="NewsTag" namespace="/NewsTag" extends="struts-default">
+           <action name="NewsTag_*" class="newsTagAction" method="{1}">
+             <result name="add_view">/NewsTag_add.jsp</result>
+             <result name="input">/NewsTag_add.jsp</result>
+             <result name="add_success">/message.jsp</result>
+             <result name="delete_success">/message.jsp</result>
+             <result name="modify_success">/message.jsp</result>
+             <result name="error">/error.jsp</result>
+             <result name="query_view">/NewsTag_query_result.jsp</result>
+             <result name="front_query_view">/NewsTag_frontquery_result.jsp</result>
+             <result name="front_show_view">/NewsTag_frontshow.jsp</result>
+             <result name="modify_view">/NewsTag_modify.jsp</result>
+           </action>
+         </package>
+
+         <!-- NewsCommentAction配置 -->
+         <package name="NewsComment" namespace="/NewsComment" extends="struts-default">
+           <action name="NewsComment_*" class="newsCommentAction" method="{1}">
+             <result name="add_view">/NewsComment_add.jsp</result>
+             <result name="input">/NewsComment_add.jsp</result>
+             <result name="add_success">/message.jsp</result>
+             <result name="delete_success">/message.jsp</result>
+             <result name="modify_success">/message.jsp</result>
+             <result name="error">/error.jsp</result>
+             <result name="query_view">/NewsComment_query_result.jsp</result>
+             <result name="front_query_view">/NewsComment_frontquery_result.jsp</result>
+             <result name="front_show_view">/NewsComment_frontshow.jsp</result>
+             <result name="modify_view">/NewsComment_modify.jsp</result>
+           </action>
+         </package>
+
+         <!-- NewsCollectionAction配置 -->
+         <package name="NewsCollection" namespace="/NewsCollection" extends="struts-default">
+           <action name="NewsCollection_*" class="newsCollectionAction" method="{1}">
+             <result name="add_view">/NewsCollection_add.jsp</result>
+             <result name="input">/NewsCollection_add.jsp</result>
+             <result name="add_success">/message.jsp</result>
+             <result name="delete_success">/message.jsp</result>
+             <result name="modify_success">/message.jsp</result>
+             <result name="error">/error.jsp</result>
+             <result name="query_view">/NewsCollection_query_result.jsp</result>
+             <result name="front_query_view">/NewsCollection_frontquery_result.jsp</result>
+             <result name="front_show_view">/NewsCollection_frontshow.jsp</result>
+             <result name="modify_view">/NewsCollection_modify.jsp</result>
+           </action>
+         </package>
+
+         <!-- ZambiaAction配置 -->
+         <package name="Zambia" namespace="/Zambia" extends="struts-default">
+           <action name="Zambia_*" class="zambiaAction" method="{1}">
+             <result name="add_view">/Zambia_add.jsp</result>
+             <result name="input">/Zambia_add.jsp</result>
+             <result name="add_success">/message.jsp</result>
+             <result name="delete_success">/message.jsp</result>
+             <result name="modify_success">/message.jsp</result>
+             <result name="error">/error.jsp</result>
+             <result name="query_view">/Zambia_query_result.jsp</result>
+             <result name="front_query_view">/Zambia_frontquery_result.jsp</result>
+             <result name="front_show_view">/Zambia_frontshow.jsp</result>
+             <result name="modify_view">/Zambia_modify.jsp</result>
+           </action>
+         </package>
+
+         <!-- PhotoShareAction配置 -->
+         <package name="PhotoShare" namespace="/PhotoShare" extends="struts-default">
+           <action name="PhotoShare_*" class="photoShareAction" method="{1}">
+             <result name="add_view">/PhotoShare_add.jsp</result>
+             <result name="input">/PhotoShare_add.jsp</result>
+             <result name="add_success">/message.jsp</result>
+             <result name="delete_success">/message.jsp</result>
+             <result name="modify_success">/message.jsp</result>
+             <result name="error">/error.jsp</result>
+             <result name="query_view">/PhotoShare_query_result.jsp</result>
+             <result name="front_query_view">/PhotoShare_frontquery_result.jsp</result>
+             <result name="front_show_view">/PhotoShare_frontshow.jsp</result>
+             <result name="modify_view">/PhotoShare_modify.jsp</result>
+           </action>
+         </package>
+
+         <!-- PhotoCommentAction配置 -->
+         <package name="PhotoComment" namespace="/PhotoComment" extends="struts-default">
+           <action name="PhotoComment_*" class="photoCommentAction" method="{1}">
+             <result name="add_view">/PhotoComment_add.jsp</result>
+             <result name="input">/PhotoComment_add.jsp</result>
+             <result name="add_success">/message.jsp</result>
+             <result name="delete_success">/message.jsp</result>
+             <result name="modify_success">/message.jsp</result>
+             <result name="error">/error.jsp</result>
+             <result name="query_view">/PhotoComment_query_result.jsp</result>
+             <result name="front_query_view">/PhotoComment_frontquery_result.jsp</result>
+             <result name="front_show_view">/PhotoComment_frontshow.jsp</result>
+             <result name="modify_view">/PhotoComment_modify.jsp</result>
+           </action>
+         </package>
+
+         <!-- VideoShareAction配置 -->
+         <package name="VideoShare" namespace="/VideoShare" extends="struts-default">
+           <action name="VideoShare_*" class="videoShareAction" method="{1}">
+             <result name="add_view">/VideoShare_add.jsp</result>
+             <result name="input">/VideoShare_add.jsp</result>
+             <result name="add_success">/message.jsp</result>
+             <result name="delete_success">/message.jsp</result>
+             <result name="modify_success">/message.jsp</result>
+             <result name="error">/error.jsp</result>
+             <result name="query_view">/VideoShare_query_result.jsp</result>
+             <result name="front_query_view">/VideoShare_frontquery_result.jsp</result>
+             <result name="front_show_view">/VideoShare_frontshow.jsp</result>
+             <result name="modify_view">/VideoShare_modify.jsp</result>
+           </action>
+         </package>
+
+         <!-- HuodongAction配置 -->
+         <package name="Huodong" namespace="/Huodong" extends="struts-default">
+           <action name="Huodong_*" class="huodongAction" method="{1}">
+             <result name="add_view">/Huodong_add.jsp</result>
+             <result name="input">/Huodong_add.jsp</result>
+             <result name="add_success">/message.jsp</result>
+             <result name="delete_success">/message.jsp</result>
+             <result name="modify_success">/message.jsp</result>
+             <result name="error">/error.jsp</result>
+             <result name="query_view">/Huodong_query_result.jsp</result>
+             <result name="front_query_view">/Huodong_frontquery_result.jsp</result>
+             <result name="front_show_view">/Huodong_frontshow.jsp</result>
+             <result name="modify_view">/Huodong_modify.jsp</result>
+           </action>
+         </package>
+
+
+	 
+	 
+
+ 	 <package name="password" namespace="/password" extends="struts-default">
+	        <action name="ChangePassword" class="changePasswordAction">  
+	        	<result name="change_success">/message.jsp</result>
+	        	<result name="error">/error.jsp</result> 
+	        </action>  
+	 </package> 
+	  
+	 <package name="User" namespace="/User" extends="struts-default">
+	        <action name="User_*" class="com.chengxusheji.action.UserAction" method="{1}">  
+	        	<result name="user_query_view">/user_query_result.jsp</result>
+	        	<result name="success">/message.jsp</result>
+	        	<result name="error">/error.jsp</result> 
+	        </action>  
+	 </package>  
+	 
+</struts>

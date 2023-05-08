@@ -1,0 +1,69 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.chengxusheji.domain">
+
+	<class name="Huodong" table="Huodong">
+
+          <!-- 主键活动id -->
+          <id name="huodongId" column="huodongId">
+            <generator class="native"/>
+          </id>
+
+          <!-- 简单字符串属性: 活动主题  -->
+          <property
+            name="title"
+            column="title"
+            type="string"
+            length="80"
+          />
+
+          <!-- 简单字符串属性: 活动内容 -->
+          <property
+            name="content"
+            column="content"
+            type="string"
+            length="1000"
+          />
+
+          <!-- 简单字符串属性: 报名电话 -->
+          <property
+            name="telephone"
+            column="telephone"
+            type="string"
+            length="20"
+          />
+
+          <!-- 简单字符串属性: 参与名单 -->
+          <property
+            name="personList"
+            column="personList"
+            type="string"
+            length="100"
+          />
+
+          <!-- 多对一属性: 发起人 -->
+          <many-to-one name="userObj"
+            column="userObj"
+            class="UserInfo"
+            lazy="false"
+            outer-join="true"
+            cascade="save-update"
+          />
+
+          <!-- 简单字符串属性: 发布时间 -->
+          <property
+            name="addTime"
+            column="addTime"
+            type="string"
+            length="20"
+          />
+
+
+		 
+		
+	</class>
+	
+</hibernate-mapping>
+ 
